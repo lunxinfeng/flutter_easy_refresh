@@ -41,9 +41,8 @@ class ERScrollBehavior extends ScrollBehavior {
           return child;
         }
         return Scrollbar(controller: details.controller, child: child);
-      case TargetPlatform.android:
-      case TargetPlatform.fuchsia:
-      case TargetPlatform.iOS:
+      default:
+        // 鸿蒙等非桌面平台沿用子组件的滚动条行为。
         return child;
     }
   }
